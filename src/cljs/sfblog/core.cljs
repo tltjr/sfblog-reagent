@@ -23,7 +23,7 @@
     (:path (reitit/match-by-name router route params))
     (:path (reitit/match-by-name router route))))
 
-(defn spacepost []
+(defn spacepost [postclass]
    [:div.single-col-post
     [:h1 "A Story About Space"]
     [:p "Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory."]
@@ -44,6 +44,11 @@
     [:p "Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before."]
     [:p "As I stand out here in the wonders of the unknown at Hadley, I sort of realize there's a fundamental truth to our nature, Man must explore, and this is exploration at its greatest."]])
 
+(defn single-column-post [postfunc]
+  [:div.row
+   [:div {:class "col-lg-8 col-md-10 mx-auto post-text"}
+    [postfunc "single-col-post"]]])
+
 ;; -------------------------
 ;; Page components
 
@@ -51,9 +56,7 @@
   (fn []
     [:span.main
      [:div.container
-      [:div.row
-       [:div {:class "col-lg-8 col-md-10 mx-auto post-text"}
-        [spacepost]]]]]))
+      (single-column-post spacepost)]]))
 
 (defn items-page []
   (fn []
