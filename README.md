@@ -1,6 +1,6 @@
-# sfblog
+# Sparkling Fill Blog
 
-This is the sfblog project.
+This is the blog for Sparkling Fill
 
 ## Development mode
 
