@@ -7,7 +7,7 @@
 
 (defn two-column-post [postfunc]
   [:div.two-column
-   [:div.post
-    [postfunc "single-col-post"]]
-   [:div.sidebar])
+   [:div {:class "post post-text"}
+    [postfunc "two-col-post"]]
+   [:div.sidebar]])
 

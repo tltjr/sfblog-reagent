@@ -29,7 +29,7 @@ p {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
 }
-.single-col-post {
+.container {
   margin-top: 75px;
   margin-bottom: 250px;
 }
@@ -46,9 +46,7 @@ p {
 }
 .post {
   grid-area: post;
-  background-color: #72b1ff;
 }
 .sidebar {
-  grid-area: post;
-  background-color: #b8ff72;
+  grid-area: sidebar;
 }
