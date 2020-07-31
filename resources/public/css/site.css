@@ -38,4 +38,17 @@ p {
   color: #212529;
   font-family: Lora,'Times New Roman',serif;
 }
-
+/* Two Column Post */
+.two-column {
+  display: grid;
+  grid-template-areas: "post sidebar";
+  grid-template-columns: 3fr 1fr;
+}
+.post {
+  grid-area: post;
+  background-color: #72b1ff;
+}
+.sidebar {
+  grid-area: post;
+  background-color: #b8ff72;
+}

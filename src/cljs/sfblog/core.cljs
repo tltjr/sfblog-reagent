@@ -1,11 +1,10 @@
 (ns sfblog.core
-  (:require
    [reagent.core :as reagent :refer [atom]]
    [reagent.dom :as rdom]
    [reagent.session :as session]
    [reitit.frontend :as reitit]
    [clerk.core :as clerk]
-   [accountant.core :as accountant]))
+   [accountant.core :as accountant])
 
 ;; -------------------------
 ;; Routes
@@ -49,6 +48,12 @@
    [:div {:class "col-lg-8 col-md-10 mx-auto post-text"}
     [postfunc "single-col-post"]]])
 
+(defn two-column-post [postfunc]
+  [:div.two-column
+   [:div.post
+    [postfunc "single-col-post"]]
+   [:div.sidebar])
+
 ;; -------------------------
 ;; Page components
 
@@ -56,7 +61,13 @@
   (fn []
     [:span.main
      [:div.container
-      (single-column-post spacepost)]]))
+      (two-column-post spacepost)]]))
+
+;; (defn home-page []
+;;   (fn []
+;;     [:span.main
+;;      [:div.container
+;;       (single-column-post spacepost)]]))
 
 (defn items-page []
   (fn []
